@@ -1,0 +1,74 @@
+---
+title: "Submit and Track Stock Requests in JKUAT IMS"
+sidebarTitle: "Requests"
+description: "How to submit a stock request, view your request history, and understand approval and rejection outcomes in the JKUAT IMS user portal."
+---
+
+The request feature in the JKUAT Inventory Management System lets you formally ask for inventory items you need. Once you submit a request, the administrator reviews it and either approves or rejects it. You can track the status of all your requests from the My Requests page.
+
+## Submitting a Stock Request
+
+<Steps>
+  <Step title="Find the Item">
+    Go to the **Inventory** page and search or browse for the item you need. See [Browsing Inventory](/user/viewing-inventory) if you need help finding items.
+  </Step>
+  <Step title="Click Request">
+    On the item's row in the inventory table, click the **Request** button. This opens the stock request form.
+
+    <Note>
+      The Request button is only active for items with status **In Stock**. You cannot submit a request for an out-of-stock item.
+    </Note>
+  </Step>
+  <Step title="Fill In the Request Form">
+    Complete the form:
+
+    | Field | Description |
+    |---|---|
+    | Item | Pre-filled from the item you selected |
+    | Quantity Needed | Enter the amount you require |
+    | Reason / Purpose | Briefly describe why you need the item |
+    | Date Required | Optional — the date by which you need the item |
+  </Step>
+  <Step title="Submit the Request">
+    Click **Submit Request**. You will see a confirmation message and the request will appear in your **My Requests** list with status **Pending**.
+  </Step>
+</Steps>
+
+## Viewing Your Requests
+
+From the navigation menu, click **My Requests**. The table shows all requests you have submitted:
+
+| Column | Description |
+|---|---|
+| Request ID | Auto-generated unique reference number |
+| Item | The item you requested |
+| Quantity | Amount you requested |
+| Date Submitted | When you submitted the request |
+| Status | Pending, Approved, or Rejected |
+| Admin Note | Any comment left by the administrator |
+
+## Request Statuses
+
+| Status | Meaning |
+|---|---|
+| **Pending** | Your request has been received and is awaiting admin review |
+| **Approved** | The administrator has approved your request — collect the item from the relevant department |
+| **Rejected** | The request was not approved — check the Admin Note for the reason |
+
+<Note>
+  When your request is approved, it is your responsibility to collect the item from the designated department or store. The system records the approval but does not deliver items automatically.
+</Note>
+
+## Cancelling a Pending Request
+
+If you submitted a request by mistake and it has not yet been reviewed:
+1. Go to **My Requests**.
+2. Find the request with status **Pending**.
+3. Click the **Cancel** button on that row.
+4. Confirm the cancellation.
+
+Once a request has been approved or rejected, it cannot be cancelled.
+
+<Tip>
+  Include a clear reason in the request form. Requests with a well-described purpose are typically approved faster.
+</Tip>

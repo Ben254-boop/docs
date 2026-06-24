@@ -1,0 +1,90 @@
+---
+title: "Admin: Add, Edit, and Track Inventory Items in JKUAT IMS"
+sidebarTitle: "Inventory Management"
+description: "How to add new inventory items, update quantities, edit item details, and delete records from the JKUAT Inventory Management System admin panel."
+---
+
+The Inventory section of the admin panel is where all stock items are created and maintained. Every item in the JKUAT Inventory Management System lives here — from laboratory equipment to office supplies. As an administrator, you have full control to add, edit, update quantities, and remove items.
+
+## Accessing Inventory Management
+
+From the admin navigation menu, click **Inventory**. You will see the full inventory table listing all items with their category, quantity, department, status, and action buttons.
+
+## Adding a New Inventory Item
+
+<Steps>
+  <Step title="Open the Add Item Form">
+    Click the **Add New Item** button at the top of the Inventory page.
+  </Step>
+  <Step title="Fill In Item Details">
+    Complete all required fields in the form:
+
+    | Field | Description |
+    |---|---|
+    | Item Name | Descriptive name of the item (e.g. "A4 Printing Paper") |
+    | Category | Select from the available categories (e.g. Stationery, Electronics) |
+    | Department | The department that owns or stores this item |
+    | Quantity | Current stock count |
+    | Unit | Unit of measure (e.g. Pieces, Reams, Boxes, Litres) |
+    | Minimum Stock Level | The quantity threshold that triggers a low-stock alert |
+    | Description | Optional notes about the item |
+    | Date Added | Defaults to today's date |
+  </Step>
+  <Step title="Save the Item">
+    Click **Add Item**. The item appears immediately in the inventory table and counts towards the dashboard statistics.
+  </Step>
+</Steps>
+
+## Editing an Inventory Item
+
+To update an existing item's details:
+1. Find the item in the inventory table (use the search bar if needed).
+2. Click the **Edit** (pencil) icon on the item's row.
+3. Update any fields — name, category, quantity, or minimum stock level.
+4. Click **Update Item** to save.
+
+<Tip>
+  Use the edit form to manually adjust quantities after a physical stock count. The system logs all quantity changes in the activity feed.
+</Tip>
+
+## Updating Stock Quantities
+
+To adjust stock levels without editing other details:
+1. On the inventory table, click the **Update Quantity** icon on the item's row.
+2. Enter the new quantity or a +/- adjustment value.
+3. Select the reason: `Restock`, `Issued`, `Damaged`, or `Adjustment`.
+4. Click **Save**.
+
+All quantity changes are timestamped and recorded in the item's history.
+
+## Deleting an Inventory Item
+
+<Warning>
+  Deleting an item removes it and all its history permanently. Consider setting the quantity to 0 and marking it inactive instead.
+</Warning>
+
+1. Click the **Delete** (trash) icon on the item's row.
+2. Confirm the deletion in the dialog.
+
+## Inventory Table Columns
+
+| Column | Description |
+|---|---|
+| Item Name | Full name of the inventory item |
+| Category | Item category |
+| Department | Owning department |
+| Quantity | Current stock level |
+| Min Level | Low-stock threshold |
+| Status | `In Stock`, `Low Stock`, or `Out of Stock` |
+| Actions | Edit, Update Quantity, Delete |
+
+## Low-Stock Indicators
+
+Items whose quantity is at or below the minimum stock level are automatically flagged:
+- **Yellow row highlight**: Quantity is at the minimum level.
+- **Red row highlight**: Item is out of stock (quantity = 0).
+- The dashboard **Low Stock** card count updates accordingly.
+
+<Note>
+  The system does not automatically reorder stock. Low-stock alerts are visual indicators to prompt manual action.
+</Note>

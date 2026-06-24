@@ -1,0 +1,68 @@
+---
+title: "In-App Notifications and Alerts in JKUAT IMS"
+sidebarTitle: "Notifications"
+description: "How the JKUAT Inventory Management System notifies admins about low stock and users about the status of their stock requests through in-app alerts."
+---
+
+The JKUAT Inventory Management System includes a built-in notification system that surfaces important alerts directly in the interface. Notifications help administrators stay on top of low stock situations and let users know when their requests have been reviewed — without leaving the system.
+
+## Admin Notifications
+
+Administrators see notifications in the top navigation bar (bell icon) and on the dashboard. Notifications are generated for:
+
+| Event | Notification |
+|---|---|
+| Item quantity drops to or below minimum stock level | Low Stock alert for that item |
+| A user submits a new stock request | New Request notification |
+| A new user account is created | Confirmation notification |
+
+### Low Stock Alerts
+
+When an item's quantity reaches or falls below its **Minimum Stock Level**, the system:
+- Highlights the item row in yellow (low stock) or red (out of stock) in the inventory table.
+- Increments the **Low Stock** counter on the admin dashboard summary card.
+- Adds an entry to the admin notification list.
+
+To resolve a low-stock alert, update the item's quantity (e.g. after restocking) from the [Inventory Management](/admin/inventory-management) page. The alert clears automatically when the quantity exceeds the minimum level.
+
+### Pending Request Alerts
+
+Each time a user submits a stock request, the admin sees a notification badge on the bell icon and in the **Pending Requests** dashboard card. Click the notification or navigate to **Reports → User Requests** to review and action the request.
+
+## User Notifications
+
+Users see notifications in their navigation bar when they log in. Notifications are generated for:
+
+| Event | Notification |
+|---|---|
+| Admin approves a request | "Your request for [item] has been approved" |
+| Admin rejects a request | "Your request for [item] has been rejected" |
+
+### Viewing Your Notifications
+
+1. Log in to the user portal.
+2. Click the **bell icon** in the top navigation bar.
+3. A dropdown lists your unread notifications with timestamps.
+4. Click a notification to go directly to your request detail.
+
+Notifications are marked as read once viewed and are archived in your request history.
+
+## Notification Display
+
+Notifications appear as colour-coded banners and badge counters:
+
+| Notification Type | Colour | Location |
+|---|---|---|
+| Low Stock | Orange badge | Admin dashboard card + bell icon |
+| Out of Stock | Red highlight | Inventory table row |
+| Pending Request | Blue badge | Admin bell icon |
+| Request Approved | Green banner | User bell icon |
+| Request Rejected | Red banner | User bell icon |
+
+<Note>
+  The JKUAT IMS does not send email notifications. All alerts are in-app only. Users and admins must log in to see updates.
+</Note>
+
+<Tip>
+  Administrators should check the dashboard notifications daily, especially the Low Stock and Pending Requests counts, to keep inventory accurate and requests timely.
+</Tip>

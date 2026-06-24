@@ -1,0 +1,85 @@
+{
+  "projectType": "saas",
+  "projectName": "JKUAT Inventory Management System",
+  "projectDescription": "A modern web-based inventory management system for Jomo Kenyatta University of Agriculture and Technology (JKUAT), featuring separate Admin and User interfaces built with HTML, CSS, PHP, and MySQL.",
+  "theme": "almond",
+  "primaryColor": "#ef7025",
+  "lightColor": "#eec9bc",
+  "darkColor": "#4fa1ab",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "introduction",
+              "system-requirements",
+              "installation"
+            ]
+          },
+          {
+            "group": "Admin Guide",
+            "pages": [
+              "admin/dashboard",
+              "admin/user-management",
+              "admin/inventory-management",
+              "admin/categories",
+              "admin/reports"
+            ]
+          },
+          {
+            "group": "User Guide",
+            "pages": [
+              "user/dashboard",
+              "user/viewing-inventory",
+              "user/requests",
+              "user/profile"
+            ]
+          },
+          {
+            "group": "System Features",
+            "pages": [
+              "features/authentication",
+              "features/database-schema",
+              "features/notifications",
+              "features/search-filter"
+            ]
+          },
+          {
+            "group": "Support",
+            "pages": [
+              "faq",
+              "troubleshooting"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Separate Admin and User interfaces with role-based access control",
+    "Admin-managed user account creation and login credentials",
+    "Modern, responsive dashboard with real-time inventory statistics",
+    "Full inventory CRUD — add, edit, delete, and track stock items",
+    "Category and department-based item organization",
+    "Stock request and approval workflow for users",
+    "Low-stock alerts and inventory notifications",
+    "Advanced search and filter across inventory records",
+    "Printable and exportable inventory reports",
+    "Built with HTML, CSS, PHP, and MySQL — no external frameworks"
+  ],
+  "publicApiSurface": [
+    "Admin: Create/manage user accounts and roles",
+    "Admin: Add/edit/delete inventory items",
+    "Admin: Manage categories and departments",
+    "Admin: Approve or reject user stock requests",
+    "Admin: Generate and export inventory reports",
+    "User: View available inventory items",
+    "User: Submit stock requests",
+    "User: Track request status",
+    "User: Update personal profile",
+    "Authentication: Login and session management"
+  ]
+}

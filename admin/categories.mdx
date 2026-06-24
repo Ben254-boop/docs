@@ -1,0 +1,84 @@
+---
+title: "Admin: Manage Inventory Categories and Departments"
+sidebarTitle: "Categories"
+description: "How to create, edit, and delete inventory categories and departments in the JKUAT IMS admin panel to organise your stock."
+---
+
+Categories and departments help you organise inventory items in the JKUAT Inventory Management System. Every item belongs to a category (e.g. Stationery, Electronics, Furniture) and is assigned to a department (e.g. Library, ICT, Registry). Managing these groupings keeps your inventory structured and your reports meaningful.
+
+## Managing Categories
+
+### Viewing Categories
+
+From the admin navigation menu, click **Categories**. The page lists all existing categories with the number of items in each.
+
+### Adding a New Category
+
+<Steps>
+  <Step title="Click Add Category">
+    On the Categories page, click **Add New Category**.
+  </Step>
+  <Step title="Enter Category Details">
+    | Field | Description |
+    |---|---|
+    | Category Name | Short, descriptive name (e.g. "Stationery", "Lab Equipment") |
+    | Description | Optional details about what belongs in this category |
+  </Step>
+  <Step title="Save">
+    Click **Save Category**. The new category is immediately available when adding or editing inventory items.
+  </Step>
+</Steps>
+
+### Editing a Category
+
+1. Find the category in the list.
+2. Click the **Edit** icon on its row.
+3. Update the name or description.
+4. Click **Update Category**.
+
+### Deleting a Category
+
+<Warning>
+  You cannot delete a category that has inventory items assigned to it. Reassign or delete those items first, then delete the category.
+</Warning>
+
+To delete an empty category, click the **Delete** icon and confirm.
+
+## Managing Departments
+
+Departments represent the organisational units within JKUAT (e.g. ICT Department, Library, School of Engineering).
+
+### Adding a Department
+
+1. In the admin navigation, click **Departments** (within the Categories section or its own menu item).
+2. Click **Add New Department**.
+3. Enter the department name and optional description.
+4. Click **Save Department**.
+
+### Editing and Deleting Departments
+
+- **Edit**: Click the Edit icon, update the name, click Update.
+- **Delete**: Only possible when no users or inventory items are assigned to the department.
+
+## Category and Department Usage
+
+Categories and departments appear as dropdown options in:
+- The **Add/Edit Item** form in Inventory Management
+- The **Add/Edit User** form in User Management
+- **Reports** — filter by category or department to generate targeted reports
+- **User portal** — users can filter the inventory view by category
+
+<Tip>
+  Keep category names short and consistent. Inconsistent naming (e.g. "IT Equipment" vs "ICT Equipment") makes reports harder to read and filter.
+</Tip>
+
+## Recommended Category Structure for JKUAT
+
+| Category | Example Items |
+|---|---|
+| Stationery | Pens, paper, folders, staplers |
+| Electronics & ICT | Computers, projectors, cables, printers |
+| Furniture | Chairs, desks, shelving units |
+| Laboratory Equipment | Beakers, microscopes, reagents |
+| Cleaning Supplies | Detergent, mops, bins |
+| Medical Supplies | First-aid kits, gloves, sanitisers |

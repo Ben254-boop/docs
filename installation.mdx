@@ -1,0 +1,123 @@
+---
+title: "Install the JKUAT Inventory Management System"
+sidebarTitle: "Installation"
+description: "Step-by-step guide to installing the JKUAT Inventory Management System on a local server or campus environment using XAMPP, PHP, and MySQL."
+---
+
+This guide walks you through setting up the JKUAT Inventory Management System from scratch. By the end, you will have a fully working installation with the database imported, the application running, and the admin account ready to use.
+
+<Warning>
+  Ensure your server meets the [System Requirements](/system-requirements) before proceeding. The system requires PHP 7.4+, MySQL 5.7+, and Apache.
+</Warning>
+
+## Installation Steps
+
+<Steps>
+  <Step title="Download and Extract the Project Files">
+    Obtain the JKUAT IMS project zip file and extract it. You should see a directory structure like this:
+
+    ```
+    jkuat-ims/
+    ├── admin/
+    ├── user/
+    ├── assets/
+    │   ├── css/
+    │   ├── js/
+    │   └── images/
+    ├── includes/
+    ├── database/
+    │   └── jkuat_ims.sql
+    ├── config/
+    │   └── db.php
+    └── index.php
+    ```
+
+    Copy the entire `jkuat-ims/` folder into your web server's root directory:
+    - **XAMPP on Windows**: `C:\xampp\htdocs\`
+    - **XAMPP on Linux**: `/opt/lampp/htdocs/`
+  </Step>
+
+  <Step title="Create the Database">
+    Open your browser and navigate to `http://localhost/phpmyadmin`. Log in and create a new database:
+
+    ```sql
+    CREATE DATABASE jkuat_ims CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+    ```
+
+    Then import the provided SQL schema:
+    1. Select the `jkuat_ims` database in phpMyAdmin.
+    2. Click the **Import** tab.
+    3. Choose the file `database/jkuat_ims.sql` from the project folder.
+    4. Click **Go** to run the import.
+
+    The import creates all tables and inserts the default admin account.
+  </Step>
+
+  <Step title="Configure the Database Connection">
+    Open the file `config/db.php` in a text editor and update the connection settings to match your environment:
+
+    ```php config/db.php
+    <?php
+    $host     = 'localhost';       // Your database host
+    $dbname   = 'jkuat_ims';       // The database you created
+    $username = 'root';            // Your MySQL username
+    $password = '';                // Your MySQL password (empty for default XAMPP)
+
+    $conn = new mysqli($host, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die('Connection failed: ' . $conn->connect_error);
+    }
+    ?>
+    ```
+
+    <Warning>
+      Change the default MySQL password before deploying to a production or campus-wide server. Leaving the password blank is only acceptable for local development.
+    </Warning>
+  </Step>
+
+  <Step title="Start the Web Server and Open the Application">
+    Start Apache and MySQL in the XAMPP Control Panel. Then open your browser and navigate to:
+
+    ```
+    http://localhost/jkuat-ims/
+    ```
+
+    You should see the JKUAT IMS login page. Use the default administrator credentials to log in for the first time.
+
+    <Note>
+      The default admin credentials are set in the SQL import. Check the `database/jkuat_ims.sql` file or the system README for the initial username and password. Change them immediately after first login.
+    </Note>
+  </Step>
+
+  <Step title="Secure the Installation">
+    After your first login:
+    - Change the default admin password from the Admin Profile settings.
+    - Remove or restrict access to the `database/` folder on production servers.
+    - Set appropriate file permissions (755 for directories, 644 for files).
+  </Step>
+</Steps>
+
+## Folder Structure Reference
+
+| Folder / File | Purpose |
+|---|---|
+| `admin/` | All admin panel pages and logic |
+| `user/` | All user portal pages and logic |
+| `assets/css/` | Stylesheets for both interfaces |
+| `assets/images/` | JKUAT logo and UI images |
+| `includes/` | Shared PHP include files (header, footer, session) |
+| `config/db.php` | Database connection configuration |
+| `database/jkuat_ims.sql` | Full SQL schema and seed data |
+| `index.php` | Application entry point (login page) |
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Admin Dashboard" icon="gauge-high" href="/admin/dashboard">
+    Explore the admin panel and start configuring the system.
+  </Card>
+  <Card title="User Management" icon="users" href="/admin/user-management">
+    Create accounts for your staff and assign roles.
+  </Card>
+</CardGroup>

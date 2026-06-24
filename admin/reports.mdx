@@ -1,0 +1,87 @@
+---
+title: "Admin: Generate and Export Inventory Reports in JKUAT IMS"
+sidebarTitle: "Reports"
+description: "How to generate, filter, print, and export inventory and stock movement reports from the JKUAT IMS admin panel."
+---
+
+The Reports section of the admin panel gives you a complete picture of your inventory at any point in time. You can generate reports filtered by date range, category, department, or stock status — and print or export them for official records or auditing purposes.
+
+## Accessing Reports
+
+From the admin navigation menu, click **Reports**. You will see a filter panel at the top and a report preview table below.
+
+## Report Types
+
+| Report Type | Description |
+|---|---|
+| **Full Inventory Report** | Lists all items with current quantities, categories, and departments |
+| **Low Stock Report** | Items at or below their minimum stock threshold |
+| **Stock Movement Report** | History of all quantity changes (additions, issues, adjustments) |
+| **User Requests Report** | All stock requests with status (pending, approved, rejected) |
+| **Category Summary** | Total stock value grouped by category |
+| **Department Summary** | Total stock value grouped by department |
+
+## Generating a Report
+
+<Steps>
+  <Step title="Select Report Type">
+    Use the **Report Type** dropdown to choose the report you need.
+  </Step>
+  <Step title="Apply Filters">
+    Narrow the report using the available filters:
+
+    | Filter | Options |
+    |---|---|
+    | Date Range | Start date and end date |
+    | Category | Any category or all categories |
+    | Department | Any department or all departments |
+    | Status | All, In Stock, Low Stock, Out of Stock |
+  </Step>
+  <Step title="Click Generate">
+    Click the **Generate Report** button. The report table populates below the filter panel.
+  </Step>
+</Steps>
+
+## Printing a Report
+
+After generating a report, click the **Print** button in the top-right of the report section. This opens the browser print dialog with a print-optimised layout — the navigation and filter panel are hidden, and the JKUAT logo and report title appear at the top.
+
+## Exporting a Report
+
+Click the **Export CSV** button to download the current report as a comma-separated values file. This file can be opened in Microsoft Excel or Google Sheets for further analysis.
+
+<Note>
+  Only the currently filtered data is exported. If you want the full inventory, make sure no filters are applied before exporting.
+</Note>
+
+## Reviewing User Requests
+
+The **User Requests Report** page doubles as the requests management interface:
+
+| Column | Description |
+|---|---|
+| Request ID | Auto-generated unique identifier |
+| Requested By | The user who submitted the request |
+| Item | The inventory item requested |
+| Quantity | Amount requested |
+| Date Submitted | When the request was made |
+| Status | Pending, Approved, or Rejected |
+| Actions | Approve or Reject buttons (for Pending requests) |
+
+### Approving a Request
+
+1. Find the request in the table (filter by Status = Pending).
+2. Click the **Approve** (green tick) button.
+3. The system deducts the requested quantity from the item's stock and marks the request as Approved.
+
+### Rejecting a Request
+
+1. Click the **Reject** (red cross) button on the request row.
+2. Optionally enter a reason for rejection.
+3. Click **Confirm Reject**.
+
+The user is notified of the decision the next time they log in and check their request history.
+
+<Tip>
+  Run a Low Stock Report monthly to stay ahead of shortages and plan procurement before critical items run out.
+</Tip>

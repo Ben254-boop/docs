@@ -1,0 +1,64 @@
+---
+title: "Authentication and Access Control in JKUAT IMS"
+sidebarTitle: "Authentication"
+description: "How login, sessions, and role-based access work in the JKUAT Inventory Management System — for both admin and user accounts."
+---
+
+The JKUAT Inventory Management System uses a session-based authentication system to secure access. Every user must log in with a username and password before accessing any part of the system. Your role — Admin or User — determines which interface you see and what actions you can take.
+
+## How Login Works
+
+<Steps>
+  <Step title="Navigate to the Login Page">
+    Open your browser and go to the system URL (e.g. `http://localhost/jkuat-ims/` or your campus server address). The login page is displayed by default.
+  </Step>
+  <Step title="Enter Your Credentials">
+    Enter your **Username** and **Password** in the login form. These credentials are provided to you by the system administrator — there is no self-registration.
+  </Step>
+  <Step title="System Verifies Your Role">
+    After you click **Login**, the system checks your credentials against the database. If they are correct, it reads your assigned role:
+    - **Admin** → redirected to the Admin Dashboard
+    - **User** → redirected to the User Dashboard
+  </Step>
+</Steps>
+
+## Role-Based Access
+
+The two interfaces are completely separate. Role assignment is controlled entirely by the administrator.
+
+| Feature | Admin | User |
+|---|---|---|
+| View inventory | ✓ | ✓ |
+| Add / edit / delete items | ✓ | ✗ |
+| Manage categories & departments | ✓ | ✗ |
+| Create user accounts | ✓ | ✗ |
+| Submit stock requests | ✗ | ✓ |
+| Approve / reject requests | ✓ | ✗ |
+| Generate reports | ✓ | ✗ |
+| Update own profile & password | ✓ | ✓ |
+
+<Note>
+  Users cannot access any admin page — even by typing the URL directly. The system checks your session role on every page load and redirects unauthorised access to the login page.
+</Note>
+
+## Sessions and Logout
+
+- Your session starts when you log in and is stored server-side.
+- Sessions expire after a period of inactivity (configurable by the administrator).
+- Always click **Logout** in the navigation menu when you are done. This clears your session immediately.
+
+<Warning>
+  On shared computers (e.g. computer labs), always log out when you finish. Do not rely on the browser tab closing to end your session.
+</Warning>
+
+## Login Errors
+
+| Error Message | Cause | Solution |
+|---|---|---|
+| "Invalid username or password" | Incorrect credentials | Double-check your username and password. Contact admin if unsure. |
+| "Your account is inactive" | Account disabled by admin | Contact the system administrator to reactivate your account. |
+| "Session expired, please log in again" | Session timeout | Log in again. |
+
+## Forgotten Password
+
+The system does not have a self-service password reset. If you forget your password, contact your JKUAT system administrator and request a password reset. The admin can set a new password for your account from the User Management panel.

@@ -1,0 +1,79 @@
+---
+title: "Admin Dashboard: Manage JKUAT Inventory at a Glance"
+sidebarTitle: "Dashboard"
+description: "A complete guide to the JKUAT IMS admin dashboard — statistics widgets, activity feeds, quick actions, and how to navigate the admin panel."
+---
+
+The admin dashboard is the command centre of the JKUAT Inventory Management System. When you log in as an administrator, you land here first. It gives you a live snapshot of the entire inventory — total items, low-stock alerts, pending requests, and recent activity — all on a single screen.
+
+## Dashboard Overview
+
+The admin dashboard is divided into four main areas:
+
+### 1. Statistics Cards
+
+At the top of the dashboard, four summary cards display the most important system metrics at a glance:
+
+| Card | What It Shows |
+|---|---|
+| **Total Items** | The total number of distinct inventory items in the system |
+| **Low Stock Items** | Items whose current quantity is at or below the defined threshold |
+| **Pending Requests** | User stock requests awaiting admin review |
+| **Total Users** | The number of active user accounts in the system |
+
+Each card is colour-coded and updates in real time when the page loads.
+
+### 2. Inventory Status Chart
+
+Below the summary cards, a visual bar or doughnut chart breaks down inventory by category or department. This helps you identify which departments hold the most stock and where shortages are developing.
+
+### 3. Recent Activity Feed
+
+The activity feed on the right side of the dashboard shows a chronological log of recent system events:
+- New inventory items added
+- Stock quantities updated
+- User requests submitted
+- Requests approved or rejected
+- New user accounts created
+
+### 4. Quick Action Buttons
+
+At the bottom of the dashboard, quick-action buttons let you jump directly to common tasks without navigating the menu:
+
+<CardGroup cols={2}>
+  <Card title="Add New Item" icon="plus" href="/admin/inventory-management">
+    Open the add item form directly from the dashboard.
+  </Card>
+  <Card title="Manage Users" icon="users" href="/admin/user-management">
+    Create or update user accounts.
+  </Card>
+  <Card title="View Requests" icon="inbox" href="/admin/reports">
+    See all pending stock requests.
+  </Card>
+  <Card title="Generate Report" icon="chart-bar" href="/admin/reports">
+    Export or print a current inventory report.
+  </Card>
+</CardGroup>
+
+## Admin Navigation Menu
+
+The left sidebar (or top navigation bar, depending on screen size) contains all admin sections:
+
+| Menu Item | Purpose |
+|---|---|
+| Dashboard | Home screen with statistics |
+| Inventory | Add, edit, delete, and view all items |
+| Categories | Manage item categories |
+| Users | Create and manage user accounts |
+| Requests | Review and action user stock requests |
+| Reports | Generate and export inventory reports |
+| Profile | Update admin account details and password |
+| Logout | End the current session |
+
+## Responsive Layout
+
+The admin panel is fully responsive. On smaller screens, the sidebar collapses into a hamburger menu. Statistics cards stack vertically. All tables support horizontal scrolling on narrow viewports.
+
+<Tip>
+  Bookmark `http://localhost/jkuat-ims/admin/dashboard.php` (or your server equivalent) for fast access to the admin panel.
+</Tip>

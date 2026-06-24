@@ -1,0 +1,113 @@
+---
+title: "JKUAT IMS Database Structure and Table Reference"
+sidebarTitle: "Database Schema"
+description: "An overview of the MySQL database tables in the JKUAT Inventory Management System — what each table stores and how tables relate to each other."
+---
+
+The JKUAT Inventory Management System stores all its data in a MySQL database. Understanding the database structure helps administrators manage the system, troubleshoot issues, and plan data backups. The schema is automatically created when you import the provided SQL file during installation.
+
+## Core Tables
+
+### users
+
+Stores all system user accounts, including administrators.
+
+| Column | Type | Description |
+|---|---|---|
+| `id` | INT, PK | Auto-increment unique identifier |
+| `full_name` | VARCHAR(100) | User's full name |
+| `username` | VARCHAR(50) | Unique login username |
+| `password` | VARCHAR(255) | Hashed password (MD5/SHA) |
+| `email` | VARCHAR(100) | Institutional email address |
+| `department_id` | INT, FK | References `departments.id` |
+| `role` | ENUM('admin','user') | Access level |
+| `status` | ENUM('active','inactive') | Account status |
+| `created_at` | DATETIME | Account creation timestamp |
+
+### items
+
+Stores all inventory items.
+
+| Column | Type | Description |
+|---|---|---|
+| `id` | INT, PK | Auto-increment unique identifier |
+| `item_name` | VARCHAR(150) | Name of the inventory item |
+| `category_id` | INT, FK | References `categories.id` |
+| `department_id` | INT, FK | References `departments.id` |
+| `quantity` | INT | Current stock quantity |
+| `unit` | VARCHAR(30) | Unit of measure |
+| `min_stock_level` | INT | Low-stock threshold |
+| `description` | TEXT | Optional item description |
+| `date_added` | DATE | Date item was entered |
+
+### categories
+
+| Column | Type | Description |
+|---|---|---|
+| `id` | INT, PK | Unique identifier |
+| `category_name` | VARCHAR(100) | Category label |
+| `description` | TEXT | Optional description |
+
+### departments
+
+| Column | Type | Description |
+|---|---|---|
+| `id` | INT, PK | Unique identifier |
+| `department_name` | VARCHAR(100) | Department name |
+| `description` | TEXT | Optional description |
+
+### requests
+
+Records all user stock requests.
+
+| Column | Type | Description |
+|---|---|---|
+| `id` | INT, PK | Unique request ID |
+| `user_id` | INT, FK | References `users.id` |
+| `item_id` | INT, FK | References `items.id` |
+| `quantity_requested` | INT | Amount requested |
+| `reason` | TEXT | Purpose or justification |
+| `date_required` | DATE | Optional required-by date |
+| `status` | ENUM('pending','approved','rejected') | Current status |
+| `admin_note` | TEXT | Admin comment on approval/rejection |
+| `submitted_at` | DATETIME | Submission timestamp |
+| `actioned_at` | DATETIME | When admin approved/rejected |
+
+### activity_log
+
+Audit trail of all significant system events.
+
+| Column | Type | Description |
+|---|---|---|
+| `id` | INT, PK | Unique log entry ID |
+| `user_id` | INT, FK | Who performed the action |
+| `action` | VARCHAR(255) | Description of the event |
+| `created_at` | DATETIME | Timestamp |
+
+## Entity Relationships
+
+```
+users ──────< requests >────── items
+  │                              │
+  └── department_id              ├── category_id → categories
+        │                        └── department_id
+        ▼
+   departments
+```
+
+- One user can submit many requests.
+- One item can appear in many requests.
+- Each item belongs to one category and one department.
+- Each user belongs to one department.
+
+## Database Backups
+
+Back up the `jkuat_ims` database regularly using phpMyAdmin's Export function or mysqldump:
+
+```bash
+mysqldump -u root -p jkuat_ims > backup_$(date +%Y%m%d).sql
+```
+
+<Warning>
+  Keep database backups in a secure, off-server location. A backup is your only recovery option if data is lost.
+</Warning>

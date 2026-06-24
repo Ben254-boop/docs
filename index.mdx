@@ -1,20 +1,68 @@
 ---
-title: "Introduction"
-description: "Welcome to your project"
+title: "JKUAT Inventory Management System"
+sidebarTitle: "Home"
+description: "Welcome to the official documentation for the JKUAT Inventory Management System — your complete guide to managing university assets and stock."
 ---
 
-Write a short description of your product here. What it does, who it's for, and what they can accomplish with it.
+The JKUAT Inventory Management System is a modern, web-based platform built exclusively for Jomo Kenyatta University of Agriculture and Technology. It gives administrators full control over university assets, stock levels, and user access, while providing staff and departmental users a clean interface to view inventory and submit stock requests — all in one unified system.
 
-<Tip>
-  Ready to make this your own? Start by editing this page. Update your `docs.json` file to customize your site. Then fill out the [Quickstart](/quickstart) page.
-</Tip>
+<CardGroup cols={2}>
+  <Card title="Introduction" icon="book-open" href="/introduction">
+    Learn what the system does, who it's for, and how the Admin and User interfaces differ.
+  </Card>
+  <Card title="Installation" icon="wrench" href="/installation">
+    Set up the system on your local or university server in a few straightforward steps.
+  </Card>
+  <Card title="Admin Guide" icon="shield-halved" href="/admin/dashboard">
+    Manage users, inventory, categories, and generate reports from the admin panel.
+  </Card>
+  <Card title="User Guide" icon="user" href="/user/dashboard">
+    Browse inventory, submit stock requests, and track approvals from the user portal.
+  </Card>
+</CardGroup>
 
-<Card title="Quickstart" icon="rocket" href="/quickstart">
-  This card links to the quickstart page in your project.
-</Card>
-<Card title="Components" icon="puzzle-piece" href="https://mintlify.com/docs/components">
-  Add cards, callouts, steps, tabs, and more to design and structure your pages.
-</Card>
-<Card title="Settings" icon="gear" href="https://mintlify.com/docs/organize/settings">
-  Set your site name, branding, and navigation in the `docs.json` file.
-</Card>
+## Getting Started
+
+Follow these steps to get up and running with the JKUAT Inventory Management System.
+
+<Steps>
+  <Step title="Check System Requirements">
+    Confirm your server environment meets the minimum requirements — PHP 7.4+, MySQL 5.7+, and a web server such as Apache or XAMPP. See [System Requirements](/system-requirements).
+  </Step>
+  <Step title="Install the System">
+    Download the project files, configure your database connection, import the SQL schema, and launch the application. See [Installation](/installation).
+  </Step>
+  <Step title="Log In as Administrator">
+    Use the default admin credentials to access the admin dashboard. From there you can set up departments, categories, and create user accounts for your staff.
+  </Step>
+  <Step title="Onboard Your Users">
+    Create login credentials for each user through the admin panel. Users receive their credentials from the administrator — they cannot self-register.
+  </Step>
+</Steps>
+
+## Explore the Documentation
+
+<CardGroup cols={3}>
+  <Card title="Admin Dashboard" icon="gauge-high" href="/admin/dashboard">
+    Real-time stock statistics, activity feed, and quick-action widgets.
+  </Card>
+  <Card title="Inventory Management" icon="boxes-stacked" href="/admin/inventory-management">
+    Add, edit, and track every item across all university departments.
+  </Card>
+  <Card title="User Requests" icon="paper-plane" href="/user/requests">
+    Users submit stock requests; admins review and approve or reject them.
+  </Card>
+  <Card title="Reports" icon="chart-bar" href="/admin/reports">
+    Generate, filter, and print inventory and movement reports.
+  </Card>
+  <Card title="Authentication" icon="lock" href="/features/authentication">
+    Understand how sessions, roles, and access control keep the system secure.
+  </Card>
+  <Card title="FAQ" icon="circle-question" href="/faq">
+    Answers to the most common questions from admins and users.
+  </Card>
+</CardGroup>
+
+<Note>
+  Only administrators can create user accounts. If you need access to the system, contact your JKUAT system administrator.
+</Note>

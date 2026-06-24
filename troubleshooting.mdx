@@ -1,0 +1,148 @@
+---
+title: "Troubleshooting Common Issues in JKUAT IMS"
+sidebarTitle: "Troubleshooting"
+description: "Solutions to common problems encountered when installing, logging in to, or using the JKUAT Inventory Management System."
+---
+
+This page covers the most common issues you may encounter with the JKUAT Inventory Management System and how to resolve them. Problems are grouped by category — installation, login, and usage.
+
+## Installation Issues
+
+<AccordionGroup>
+  <Accordion title="Database connection failed">
+    **Error**: `Connection failed: Access denied for user 'root'@'localhost'`
+
+    **Cause**: The database credentials in `config/db.php` do not match your MySQL setup.
+
+    **Solution**:
+    1. Open `config/db.php` in a text editor.
+    2. Verify the `$host`, `$username`, `$password`, and `$dbname` values.
+    3. For a default XAMPP installation, username is `root` and password is empty (`''`).
+    4. Ensure MySQL is running in the XAMPP Control Panel.
+
+    ```php config/db.php
+    $host     = 'localhost';
+    $dbname   = 'jkuat_ims';
+    $username = 'root';
+    $password = '';  // Empty for default XAMPP
+    ```
+  </Accordion>
+
+  <Accordion title="Page shows a blank white screen">
+    **Cause**: A PHP error is occurring but error display is turned off.
+
+    **Solution**:
+    1. Open `config/db.php` and check for syntax errors.
+    2. Temporarily add `error_reporting(E_ALL); ini_set('display_errors', 1);` at the top of `index.php` to see the error.
+    3. Check that PHP version is 7.4 or higher: open a terminal and run `php -v`.
+    4. Ensure the `mysqli` extension is enabled in `php.ini`.
+  </Accordion>
+
+  <Accordion title="SQL import fails in phpMyAdmin">
+    **Cause**: The SQL file may be too large for the default phpMyAdmin upload limit.
+
+    **Solution**:
+    1. Open `php.ini` and increase `upload_max_filesize` and `post_max_size` to at least `64M`.
+    2. Restart Apache after changing `php.ini`.
+    3. Alternatively, import using the command line:
+    ```bash
+    mysql -u root -p jkuat_ims < database/jkuat_ims.sql
+    ```
+  </Accordion>
+
+  <Accordion title="Apache shows a 403 Forbidden error">
+    **Cause**: Apache cannot read the project directory.
+
+    **Solution**:
+    - On Windows/XAMPP: Ensure the project folder is inside `C:\xampp\htdocs\`.
+    - On Linux: Set correct permissions: `chmod -R 755 /opt/lampp/htdocs/jkuat-ims`.
+    - Check that Apache's `mod_rewrite` module is enabled.
+  </Accordion>
+</AccordionGroup>
+
+## Login Issues
+
+<AccordionGroup>
+  <Accordion title="'Invalid username or password' error">
+    **Cause**: Incorrect username or password entered.
+
+    **Solution**:
+    - Double-check the username (it is case-sensitive in some configurations).
+    - Ask the system administrator to verify or reset your password.
+    - Administrators can reset a user password from the [User Management](/admin/user-management) panel.
+  </Accordion>
+
+  <Accordion title="'Your account is inactive' message">
+    **Cause**: The administrator has set the account status to Inactive.
+
+    **Solution**: Contact the system administrator and request account reactivation. The admin can toggle the status from the Users page.
+  </Accordion>
+
+  <Accordion title="Redirected back to login after logging in">
+    **Cause**: PHP sessions are not working correctly — often a permissions issue with the session save path.
+
+    **Solution**:
+    1. Check the PHP session save path: `session_save_path()` in PHP, usually `/tmp` on Linux.
+    2. Ensure the web server has write permission to the session directory.
+    3. In XAMPP on Windows, sessions are usually stored in `C:\xampp\tmp\` — verify this folder exists.
+  </Accordion>
+
+  <Accordion title="Admin accessing user pages or vice versa">
+    **Cause**: This should not happen — the system enforces role checks on every page. If it occurs, sessions may be corrupted.
+
+    **Solution**: Log out completely, clear your browser cookies for localhost, and log back in. If the issue persists, contact the administrator to verify your account role in the database.
+  </Accordion>
+</AccordionGroup>
+
+## Usage Issues
+
+<AccordionGroup>
+  <Accordion title="The Request button is not visible on inventory items">
+    **Cause**: The item's status is **Out of Stock** (quantity = 0), or you are not logged in as a User role.
+
+    **Solution**: Only In Stock items show the Request button. If the item shows Low Stock but you still cannot request it, check your account role with the administrator.
+  </Accordion>
+
+  <Accordion title="Search or filters are not working">
+    **Cause**: Rarely, browser JavaScript may be blocked.
+
+    **Solution**:
+    - Ensure JavaScript is enabled in your browser settings.
+    - Try a different browser (Chrome or Firefox recommended).
+    - Clear your browser cache and reload the page.
+  </Accordion>
+
+  <Accordion title="Exported CSV file is empty or shows only headers">
+    **Cause**: The current report filters return no results.
+
+    **Solution**: Clear all filters on the Reports page and generate the report again before exporting. Confirm that the inventory table has data.
+  </Accordion>
+
+  <Accordion title="Low-stock alerts not appearing on the dashboard">
+    **Cause**: The minimum stock level for items may not be set.
+
+    **Solution**: Edit each item in Inventory Management and ensure the **Minimum Stock Level** field has a value greater than 0. The system compares current quantity against this threshold to trigger alerts.
+  </Accordion>
+
+  <Accordion title="Pages load slowly">
+    **Cause**: The database may have grown large without indexes, or the server resources are limited.
+
+    **Solution**:
+    - Ensure the `items`, `requests`, and `users` tables have indexes on commonly searched columns (e.g. `item_name`, `username`).
+    - On a shared campus server, check available RAM and CPU. Restart Apache and MySQL if needed.
+    - Archive old request records periodically to keep tables lean.
+  </Accordion>
+</AccordionGroup>
+
+## Getting Further Help
+
+If your issue is not listed here, try the following:
+
+<CardGroup cols={2}>
+  <Card title="Check the FAQ" icon="circle-question" href="/faq">
+    Browse common questions and answers for both admins and users.
+  </Card>
+  <Card title="Contact Support" icon="envelope">
+    Email the JKUAT ICT helpdesk at support@jkuat.ac.ke for technical assistance.
+  </Card>
+</CardGroup>

@@ -1,0 +1,53 @@
+---
+title: "JKUAT Inventory Management System: Overview"
+sidebarTitle: "Introduction"
+description: "An overview of the JKUAT Inventory Management System — what it does, who uses it, and how the Admin and User interfaces are structured."
+---
+
+The JKUAT Inventory Management System is a purpose-built web application for Jomo Kenyatta University of Agriculture and Technology (JKUAT), Juja. It centralises the tracking, management, and movement of university assets and consumables across departments. The system is built using HTML, CSS, PHP, and MySQL, and is designed to be responsive and accessible from any modern web browser.
+
+## Who Is This System For?
+
+The system serves two distinct types of users, each with a dedicated interface:
+
+<CardGroup cols={2}>
+  <Card title="Administrators" icon="shield-halved">
+    Administrators have full control over the system. They create and manage user accounts, add and update inventory items, organise items by category, approve or reject stock requests, and generate reports.
+  </Card>
+  <Card title="Users" icon="user">
+    Users are staff or departmental personnel assigned access by the administrator. They can browse available inventory, view item details, submit stock requests, and track the status of their requests.
+  </Card>
+</CardGroup>
+
+## Key Capabilities
+
+- **Role-based access**: The admin and user interfaces are entirely separate. Admins see management tools; users see a clean, read-and-request view.
+- **Admin-managed accounts**: There is no self-registration. The administrator creates login credentials for every user in the system.
+- **Inventory tracking**: Every item is tracked by quantity, category, department, and status.
+- **Request workflow**: Users submit stock requests; admins review and approve or reject them with an audit trail.
+- **Reports**: Admins can generate and print inventory reports filtered by date, category, or department.
+- **Modern dashboard**: Both the admin and user dashboards feature real-time statistics, quick-action widgets, and a responsive layout that works on desktop and mobile.
+
+## Technology Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | HTML5, CSS3 |
+| Backend | PHP 7.4+ |
+| Database | MySQL 5.7+ |
+| Server | Apache (XAMPP recommended) |
+
+<Note>
+  The system uses no external JavaScript frameworks or third-party CSS libraries — all styling and interactivity is written in native HTML and CSS with PHP server-side logic.
+</Note>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="System Requirements" icon="list-check" href="/system-requirements">
+    Check what you need before installing.
+  </Card>
+  <Card title="Installation" icon="wrench" href="/installation">
+    Follow the step-by-step setup guide.
+  </Card>
+</CardGroup>

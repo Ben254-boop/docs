@@ -1,0 +1,82 @@
+---
+title: "Search and Filter Inventory Records in JKUAT IMS"
+sidebarTitle: "Search & Filter"
+description: "How to use the search bar and filter dropdowns to quickly find inventory items, users, and requests in the JKUAT Inventory Management System."
+---
+
+The JKUAT Inventory Management System includes real-time search and multi-filter functionality across all major data tables. Whether you are an administrator managing hundreds of inventory items or a user looking for a specific item to request, the search and filter tools help you find what you need quickly.
+
+## Search Bar
+
+Every major table in the system — inventory, users, requests, and reports — has a search bar at the top. The search filters results as you type.
+
+### How to Use the Search Bar
+
+1. Click inside the search bar above the table.
+2. Type the name, keyword, or reference number you are looking for.
+3. The table updates instantly to show only matching rows.
+4. Clear the search field to return to the full list.
+
+### What the Search Covers
+
+| Table | Searchable Fields |
+|---|---|
+| Inventory | Item name, description, category name, department name |
+| Users (Admin) | Full name, username, email, department |
+| Requests | Item name, username, Request ID |
+| Reports | Item name, category, department |
+
+## Filter Dropdowns
+
+Filters let you narrow results by a specific attribute. They work alongside the search bar — you can use both at the same time.
+
+### Inventory Filters
+
+| Filter | Options |
+|---|---|
+| Category | All Categories or any specific category |
+| Department | All Departments or any specific department |
+| Status | All / In Stock / Low Stock / Out of Stock |
+
+### Report Filters
+
+| Filter | Options |
+|---|---|
+| Report Type | Full Inventory, Low Stock, Movement, Requests, Category Summary, Dept Summary |
+| Date Range | Custom start and end dates |
+| Category | All or specific |
+| Department | All or specific |
+| Status | All / In Stock / Low Stock / Out of Stock |
+
+### Request Filters (Admin)
+
+| Filter | Options |
+|---|---|
+| Status | All / Pending / Approved / Rejected |
+| Date Range | Filter by submission date |
+| User | Filter by a specific user |
+
+## Combining Search and Filters
+
+Search and filters work together. For example, to find all low-stock electronics in the ICT department:
+1. Set **Category** = "Electronics & ICT"
+2. Set **Department** = "ICT Department"
+3. Set **Status** = "Low Stock"
+4. Optionally type a keyword in the search bar to narrow further.
+
+<Tip>
+  When generating a report, apply your filters before clicking **Generate Report** or **Export CSV** — the export only includes the currently filtered data.
+</Tip>
+
+## Pagination
+
+Tables with many records are paginated. Use the page navigation controls at the bottom of each table to move between pages. The search and filter settings are preserved as you paginate.
+
+| Control | Action |
+|---|---|
+| « First | Go to the first page |
+| ‹ Prev | Go to the previous page |
+| Page numbers | Jump to a specific page |
+| Next › | Go to the next page |
+| Last » | Go to the last page |
+| Rows per page | Change how many rows are shown per page (10, 25, 50) |

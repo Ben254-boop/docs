@@ -1,0 +1,65 @@
+---
+title: "System Requirements for JKUAT Inventory System"
+sidebarTitle: "Requirements"
+description: "Minimum and recommended server, browser, and software requirements to install and run the JKUAT Inventory Management System."
+---
+
+Before installing the JKUAT Inventory Management System, confirm that your environment meets the requirements below. The system is built with PHP and MySQL, so you need a compatible web server environment — XAMPP is the recommended option for local or campus server deployments.
+
+## Server Requirements
+
+| Component | Minimum | Recommended |
+|---|---|---|
+| PHP | 7.4 | 8.0 or higher |
+| MySQL | 5.7 | 8.0 |
+| Web Server | Apache 2.4 | Apache 2.4 with mod_rewrite |
+| PHP Extensions | `mysqli`, `pdo_mysql`, `session` | All listed plus `mbstring` |
+| RAM | 512 MB | 1 GB or more |
+| Storage | 200 MB | 1 GB (for growth) |
+
+## Supported Browsers
+
+The system is fully responsive and has been tested on the following browsers:
+
+| Browser | Minimum Version |
+|---|---|
+| Google Chrome | 90+ |
+| Mozilla Firefox | 88+ |
+| Microsoft Edge | 90+ |
+| Safari | 14+ |
+
+<Note>
+  Internet Explorer is not supported. Use any modern browser listed above for the best experience.
+</Note>
+
+## Local Development (Recommended: XAMPP)
+
+For campus server or local deployment, [XAMPP](https://www.apachefriends.org/) is the easiest way to get Apache, PHP, and MySQL running together.
+
+<CardGroup cols={2}>
+  <Card title="XAMPP for Windows" icon="windows">
+    Download from apachefriends.org and install. Ensure Apache and MySQL modules are started in the XAMPP Control Panel.
+  </Card>
+  <Card title="XAMPP for Linux/macOS" icon="terminal">
+    Use the Linux or macOS installer from apachefriends.org. Start services with the XAMPP Manager or via the command line.
+  </Card>
+</CardGroup>
+
+## Required PHP Extensions
+
+The following PHP extensions must be enabled in your `php.ini`:
+
+```ini php.ini
+extension=mysqli
+extension=pdo_mysql
+extension=mbstring
+extension=session
+```
+
+<Tip>
+  In XAMPP, these extensions are enabled by default. If you are using a custom PHP installation, check your `php.ini` file and uncomment the lines above.
+</Tip>
+
+## Next Steps
+
+Once your environment is ready, follow the [Installation Guide](/installation) to set up the system.

@@ -1,0 +1,82 @@
+---
+title: "Admin: Create and Manage User Accounts in JKUAT IMS"
+sidebarTitle: "User Management"
+description: "How administrators create, edit, activate, and deactivate user accounts in the JKUAT Inventory Management System. Users cannot self-register."
+---
+
+In the JKUAT Inventory Management System, only administrators can create user accounts. There is no self-registration — every staff member or departmental user who needs access must be set up by an admin. This page explains how to create, edit, and manage user accounts from the admin panel.
+
+<Note>
+  Users receive their login credentials directly from the administrator. Admins set the initial username and password during account creation.
+</Note>
+
+## Accessing User Management
+
+From the admin dashboard, click **Users** in the navigation menu. You will see a table listing all existing user accounts with columns for name, username, department, role, status, and action buttons.
+
+## Creating a New User Account
+
+<Steps>
+  <Step title="Open the Add User Form">
+    On the Users page, click the **Add New User** button in the top-right corner.
+  </Step>
+  <Step title="Fill In User Details">
+    Complete the form fields:
+
+    | Field | Description |
+    |---|---|
+    | Full Name | The user's full name |
+    | Username | A unique login username (e.g. `jkimani`, `aotieno`) |
+    | Password | Set the initial password — communicate this to the user securely |
+    | Email Address | User's institutional email |
+    | Department | Select the user's department from the dropdown |
+    | Role | Select `User` (regular access) |
+    | Status | Set to `Active` to allow immediate login |
+  </Step>
+  <Step title="Save the Account">
+    Click **Save User**. The account is created immediately and the user can log in with the provided credentials.
+  </Step>
+</Steps>
+
+<Warning>
+  Communicate the initial password to the user through a secure channel. Instruct them to change it after first login via their Profile page.
+</Warning>
+
+## Editing a User Account
+
+To update an existing user's details:
+1. Find the user in the Users table.
+2. Click the **Edit** (pencil) icon on their row.
+3. Update any fields — name, email, department, or password.
+4. Click **Update User** to save changes.
+
+<Note>
+  Editing a user's password will override their current password. The user will need to use the new password on their next login.
+</Note>
+
+## Activating and Deactivating Users
+
+To temporarily revoke a user's access without deleting their account:
+- Click the **Status** toggle on their row to switch between `Active` and `Inactive`.
+- Inactive users cannot log in. Their history and requests are preserved.
+
+## Deleting a User Account
+
+To permanently remove a user:
+1. Click the **Delete** (trash) icon on their row.
+2. Confirm the deletion in the confirmation dialog.
+
+<Warning>
+  Deleting a user is permanent. Their associated request history will also be removed. Consider deactivating the account instead if you may need to restore access later.
+</Warning>
+
+## User Roles
+
+| Role | Access Level |
+|---|---|
+| `Admin` | Full access to all admin panel features |
+| `User` | Access to the user portal only — view inventory and submit requests |
+
+## Searching and Filtering Users
+
+The Users table includes a search bar at the top. Type a name, username, or department to filter the list. Use the **Department** dropdown filter to view users by department.

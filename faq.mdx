@@ -1,0 +1,91 @@
+---
+title: "Frequently Asked Questions — JKUAT Inventory System"
+sidebarTitle: "FAQ"
+description: "Answers to the most common questions from administrators and users of the JKUAT Inventory Management System."
+---
+
+This page answers the most frequently asked questions about the JKUAT Inventory Management System. Questions are grouped by audience — general questions first, then specific questions for administrators and users.
+
+## General Questions
+
+<AccordionGroup>
+  <Accordion title="What is the JKUAT Inventory Management System?">
+    It is a web-based system for managing assets, stock, and consumables at Jomo Kenyatta University of Agriculture and Technology (JKUAT). It provides an admin interface for managing inventory and users, and a separate user portal for staff to browse stock and submit requests.
+  </Accordion>
+
+  <Accordion title="What technology does the system use?">
+    The system is built entirely with HTML, CSS, PHP, and MySQL. It does not rely on external frameworks, meaning it can run on any standard web server that supports PHP and MySQL — such as XAMPP on Windows or LAMPP on Linux.
+  </Accordion>
+
+  <Accordion title="Which browsers are supported?">
+    The system works on all modern browsers: Google Chrome (90+), Mozilla Firefox (88+), Microsoft Edge (90+), and Safari (14+). Internet Explorer is not supported.
+  </Accordion>
+
+  <Accordion title="Is the system mobile-friendly?">
+    Yes. Both the admin and user interfaces are fully responsive and adapt to any screen size, including tablets and mobile phones.
+  </Accordion>
+
+  <Accordion title="Can I use the system offline?">
+    No. The system requires a running web server (Apache) and database (MySQL). On a local network, it can be accessed by anyone on the same network if hosted on a shared campus server. For purely offline use, it must be installed on a local machine.
+  </Accordion>
+</AccordionGroup>
+
+## Administrator Questions
+
+<AccordionGroup>
+  <Accordion title="How do I create a user account?">
+    Log in as an administrator, go to the **Users** section in the admin navigation menu, and click **Add New User**. Fill in the user's full name, a unique username, a temporary password, their email, and department. Click **Save User**. The user can log in immediately with those credentials. See [User Management](/admin/user-management) for full instructions.
+  </Accordion>
+
+  <Accordion title="Can users register themselves?">
+    No. User accounts can only be created by administrators. There is no self-registration feature in the system.
+  </Accordion>
+
+  <Accordion title="How do I reset a user's password?">
+    Go to **Users**, find the user's row, click **Edit**, enter a new password in the password field, and click **Update User**. Communicate the new password to the user through a secure channel.
+  </Accordion>
+
+  <Accordion title="How do I add a new inventory item?">
+    From the admin panel, click **Inventory** in the menu, then **Add New Item**. Fill in the item name, category, department, quantity, unit, and minimum stock level. Click **Add Item**. See [Inventory Management](/admin/inventory-management) for full instructions.
+  </Accordion>
+
+  <Accordion title="How do I approve or reject a stock request?">
+    Go to **Reports → User Requests** in the admin panel. Find the request (filter by Status = Pending if needed). Click the **Approve** (green tick) or **Reject** (red cross) button on the request row. For rejections, you can optionally enter a reason. The user will see the decision the next time they log in.
+  </Accordion>
+
+  <Accordion title="Can I delete a category that has items in it?">
+    No. You must first reassign or delete all items in the category before the category can be deleted. This prevents orphaned inventory records.
+  </Accordion>
+
+  <Accordion title="How do I export the inventory to Excel?">
+    Go to **Reports**, generate the report you want (apply any filters), and click **Export CSV**. Open the downloaded CSV file in Microsoft Excel or Google Sheets.
+  </Accordion>
+</AccordionGroup>
+
+## User Questions
+
+<AccordionGroup>
+  <Accordion title="How do I get a login account?">
+    Contact your JKUAT system administrator. Only administrators can create user accounts — you cannot sign up yourself.
+  </Accordion>
+
+  <Accordion title="I forgot my password. What do I do?">
+    Contact your system administrator and request a password reset. The admin can set a new password for your account from the User Management panel. There is no self-service password reset.
+  </Accordion>
+
+  <Accordion title="How do I request an inventory item?">
+    Log in, go to **Inventory**, find the item you need, and click the **Request** button on its row. Fill in the quantity and reason, then click **Submit Request**. The admin will review your request and you will see the outcome in **My Requests**. See [Submitting a Request](/user/requests) for full instructions.
+  </Accordion>
+
+  <Accordion title="Why can't I see the Request button on some items?">
+    The Request button is only active for items with status **In Stock**. Items that are **Low Stock** may still show the button, but **Out of Stock** items do not.
+  </Accordion>
+
+  <Accordion title="How do I cancel a request I submitted?">
+    Go to **My Requests**, find the request with status **Pending**, and click **Cancel**. You cannot cancel a request that has already been approved or rejected.
+  </Accordion>
+
+  <Accordion title="How do I change my password?">
+    Log in, go to your **Profile** page from the navigation menu, scroll to the **Change Password** section, enter your current password and new password, and click **Update Password**.
+  </Accordion>
+</AccordionGroup>
