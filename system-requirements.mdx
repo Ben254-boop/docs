@@ -1,7 +1,7 @@
 ---
-title: "System Requirements for JKUAT Inventory System"
+title: "System Requirements: JKUAT Inventory Management System"
 sidebarTitle: "Requirements"
-description: "Minimum and recommended server, browser, and software requirements to install and run the JKUAT Inventory Management System."
+description: "Minimum and recommended server, software, and browser requirements to install and run the JKUAT Inventory Management System on Apache with PHP and MySQL."
 ---
 
 Before installing the JKUAT Inventory Management System, confirm that your environment meets the requirements below. The system is built with PHP and MySQL, so you need a compatible web server environment — XAMPP is the recommended option for local or campus server deployments.
@@ -13,7 +13,7 @@ Before installing the JKUAT Inventory Management System, confirm that your envir
 | PHP | 7.4 | 8.0 or higher |
 | MySQL | 5.7 | 8.0 |
 | Web Server | Apache 2.4 | Apache 2.4 with mod_rewrite |
-| PHP Extensions | `mysqli`, `pdo_mysql`, `session` | All listed plus `mbstring` |
+| PHP Extensions | `mysqli`, `pdo_mysql` | All listed plus `mbstring` |
 | RAM | 512 MB | 1 GB or more |
 | Storage | 200 MB | 1 GB (for growth) |
 
@@ -37,10 +37,10 @@ The system is fully responsive and has been tested on the following browsers:
 For campus server or local deployment, [XAMPP](https://www.apachefriends.org/) is the easiest way to get Apache, PHP, and MySQL running together.
 
 <CardGroup cols={2}>
-  <Card title="XAMPP for Windows" icon="windows">
+  <Card title="XAMPP for Windows" icon="windows" href="https://www.apachefriends.org/download.html">
     Download from apachefriends.org and install. Ensure Apache and MySQL modules are started in the XAMPP Control Panel.
   </Card>
-  <Card title="XAMPP for Linux/macOS" icon="terminal">
+  <Card title="XAMPP for Linux/macOS" icon="terminal" href="https://www.apachefriends.org/download.html">
     Use the Linux or macOS installer from apachefriends.org. Start services with the XAMPP Manager or via the command line.
   </Card>
 </CardGroup>
@@ -53,7 +53,6 @@ The following PHP extensions must be enabled in your `php.ini`:
 extension=mysqli
 extension=pdo_mysql
 extension=mbstring
-extension=session
 ```
 
 <Tip>
